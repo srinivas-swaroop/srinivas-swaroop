@@ -1,4 +1,4 @@
-class sieve {
+class _1simplesieve {
 
     /**
      * Sieve of Eratosthenes implementation to find all primes ≤ num
