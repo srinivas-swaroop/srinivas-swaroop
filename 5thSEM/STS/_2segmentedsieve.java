@@ -10,7 +10,7 @@ public class _2segmentedsieve {
         vis[1] = true;
 
         // We iterate over all numbers from 2 to high
-        for (int i = 2; i <= high; i++) {
+        for (int i = 2; i*i <= high; i++) {
 
             /*
              * Calculate the starting point to mark multiples of i as non-prime.

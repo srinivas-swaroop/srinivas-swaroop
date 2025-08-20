@@ -83,7 +83,7 @@ public class quicksort {
 
     }
     public static void main(String[] args) {
-        int arr[] = {10,2,4,3,1};
+        int arr[] = {2,5,1,70,99,9};
         qSort(arr, 0, arr.length-1);
 
         for(int val : arr){
