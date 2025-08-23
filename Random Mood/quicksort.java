@@ -22,10 +22,8 @@ public class quicksort {
         }
 
         i++;
-
-        int temp = arr[i];
-        arr[i] = arr[right];
-        arr[right] = temp;
+        arr[right] = arr[i];
+        arr[i] = pivot;
 
         return i;
 
@@ -34,8 +32,8 @@ public class quicksort {
     static void mergeDivide(int arr[], int left, int right){
         int mid = left+(right-left)/2;
 
-        if(right >= left){
-            mergeDivide(arr, left, mid-1);
+        if(right > left){
+            mergeDivide(arr, left, mid);
             mergeDivide(arr, mid+1, right);
             merge(arr, left, right);
         }
@@ -43,47 +41,36 @@ public class quicksort {
 
     static void merge(int arr[], int left, int right){
         int mid = left+(right-left)/2;
-        int arr1[] = new int[mid];
-        int arr2[] = new int[right-mid+1];
+        int arr1[] = new int[mid-left+1];
+        int arr2[] = new int[right-mid];
 
-        for(int i=left; i<=mid; i++){
-            arr1[i] = arr[i];
+        for (int i = 0; i < mid-left+1; i++)
+        arr1[i] = arr[left + i];
+
+    for (int j = 0; j < right-mid; j++)
+        arr2[j] = arr[mid + 1 + j];
+
+    int i = 0, j = 0, k = left;
+
+    while (i < mid-left+1 && j < right-mid) {
+        if (arr1[i] <= arr2[j]) {
+            arr[k++] = arr1[i++];
+        } else {
+            arr[k++] = arr2[j++];
         }
+    }
 
-        for(int i=mid+1; i<right; i++){
-            arr2[i] = arr[i];
-        }
+    while (i < mid-left+1) {
+        arr[k++] = arr1[i++];
+    }
 
-        int i = 0;
-        int j=0;
-        int k = 0;
-
-        while(j < arr1.length && k <arr2.length){
-            if(arr1[j] > arr2[k]){
-                arr[i] = arr2[k];
-                k++;
-            } else{
-                arr[i] = arr1[j];
-                j++;
-            }
-            i++;
-        }
-
-        while(j < arr1.length){
-            arr[i] = arr1[j];
-            i++;
-            j++;
-        }
-
-        while(k < arr1.length){
-            arr[i] = arr1[k];
-            i++;
-            k++;
-        }
+    while (j < right-mid) {
+        arr[k++] = arr2[j++];
+    }
 
     }
     public static void main(String[] args) {
-        int arr[] = {2,5,1,70,99,9};
+        int arr[] = {10,2,5,0};
         qSort(arr, 0, arr.length-1);
 
         for(int val : arr){
