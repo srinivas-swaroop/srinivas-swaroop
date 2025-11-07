@@ -3,11 +3,11 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=srinivas-swaroop&label=Profile%20views&color=0e75b6&style=flat" alt="srinivas-swaroop" /> </p>
 
-- 👨‍💻 All of my projects are available at [https://srinivas-swaroop.github.io/Portfolio/](https://srinivas-swaroop.github.io/Portfolio/)
+- 👨‍💻 All of my projects are available at [Portfolio :)](https://srinivas-swaroop.github.io/Portfolio/)
 
 - 📫 How to reach me **cnsswaroop@gmail.com**
 
-- 📄 Know about my experiences [https://github.com/srinivas-swaroop/Academics_P/blob/main/C%20N%20S%20SWAROOP.pdf](https://github.com/srinivas-swaroop/Academics_P/blob/main/C%20N%20S%20SWAROOP.pdf)
+- 📄 Know about my experiences [Resume](https://github.com/srinivas-swaroop/srinivas-swaroop/blob/main/C%20N%20S%20SWAROOP_Resume.pdf)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
