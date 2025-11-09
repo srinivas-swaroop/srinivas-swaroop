@@ -52,7 +52,7 @@ We can use a **dynamic list (`ArrayList<Integer> lis`)** to track potential incr
 
 ### 💡 Steps:
 
-1. For each element `num` in array:
+1. For each element .z`num` in array:
 
    * Use **binary search** to find the position `idx` in `lis` where `num` should go.
    * If `num` is **greater than all elements**, it extends the current LIS → add it to the list.
