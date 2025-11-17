@@ -1,19 +1,17 @@
 #!/bin/bash
 # Program to display pattern using for loop
 
-for (( i=5; i>=1; i-- ))
+s='*'
+
+
+
+
+for(( j=5;j>=0;j-- ))
 do
-    # Print decreasing numbers
-    for (( j=i; j>=1; j-- ))
+    for(( i=1;i<=j;i++ ))
     do
-        echo -n "$j "
+        echo -n "$s"
     done
-
-    # Print stars
-    for (( k=i; k<=5; k++ ))
-    do
-        echo -n "* "
-    done
-
     echo
+
 done

@@ -1,15 +1,15 @@
-#!/bin/bash
-# Program to find the biggest of three numbers
+echo "Saving Three Numbers"
 
-echo "Enter three numbers:"
-read a b c
+num1=10;
+num2=5;
+num3=7;
 
-if [ $a -gt $b ] && [ $a -gt $c ]
+if [ $num1>$num2 ] && [ $num1>$num3 ]
 then
-    echo "$a is the largest number."
-elif [ $b -gt $a ] && [ $b -gt $c ]
-then
-    echo "$b is the largest number."
+    echo "num1 larger"
+elif [ $num2>$num1 ] && [ $num2>$num3 ]
+then 
+    echo "num2 larger ie $num2"
 else
-    echo "$c is the largest number."
+    echo "num3 larger"
 fi
