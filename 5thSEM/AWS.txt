@@ -28,43 +28,64 @@ https://chatgpt.com/c/68dbdfca-7b60-8320-94e9-b53aa1d88e45
 arch:
 Mod 2 :
 https://chatgpt.com/c/691ab700-24fc-8324-a53f-8dfc924cb443
+https://chatgpt.com/c/69259b4a-5100-8322-8057-6167a4749d7a
 
 MOd 3:
 https://chatgpt.com/c/691ac33c-a78c-8323-b4b7-dfa360ccdf56
+https://chatgpt.com/c/69259d90-3a34-8324-a0fd-d149451d59a2
 
 
 Mod 4:
 https://chatgpt.com/c/691ac7d4-12d0-8324-9835-2531ca7dba65
+https://chatgpt.com/c/692578d2-7728-8323-bb44-7ee1b511d1ea
 
 
-Mod 5:
+Mod 5: (D)
 https://chatgpt.com/c/691adfda-4418-8324-822a-db1d9804590f
+https://chatgpt.com/c/69255793-350c-8321-b402-308173095865
 
 Mod 6:
 https://chatgpt.com/c/691b5598-2cb0-8321-b5e8-04daa3d806dc
+https://chatgpt.com/c/6924a416-bf84-8320-8bcf-b7b565e20d8e
 
 Mod 7:
 https://chatgpt.com/c/6922169c-dd10-8321-a8c3-ae27db12c0db
+https://chatgpt.com/c/692550fd-1050-8327-9fd5-4412da78179c
 
-Mod 8:
+Mod 8: (Connecting Devices)
+https://chatgpt.com/c/69246140-5498-8320-912b-386935dd5f89
+https://chatgpt.com/c/69254de7-ae98-832d-82ef-31b1e0914267
 
 
 
 
-
-Mod 9:
+Mod 9: (Cloud Arch Framework)
 https://chatgpt.com/c/691ca2b0-b4c8-8321-83ad-53050bda1042
+https://chatgpt.com/c/6924a9a4-f75c-8320-87ae-f81ca80022c5
 
 Mod 10:
 https://chatgpt.com/c/691cab5f-de5c-8323-bd86-657be85ba664
+https://chatgpt.com/c/6924aff1-12c0-8324-b9a4-957d75299e1b
 
-Mod 11 :
+Mod 11 : (Automation)
 https://chatgpt.com/c/691cba02-ef60-8322-ac7b-8e69a8a93148 
+https://chatgpt.com/c/6924b3e5-2e90-8323-b1b7-01a1c4e93879
 
-
-Mod 12:
+Mod 12: (Cache)
 https://chatgpt.com/c/691d4961-e6b4-8322-874d-426d38a69f96
+https://chatgpt.com/c/6924b67e-e734-8320-93d1-ad21d6d21091
 
-Mod 13:
+Mod 13: (Building Decoupled)
 https://chatgpt.com/c/691d4e37-88b0-8323-8388-8eff303a6576
+https://chatgpt.com/c/692537bc-b2f4-8324-8902-e6e19edc8371
+
+
+Mod 14: (Serverless)
+https://chatgpt.com/c/69253c91-a6bc-8322-8c79-263c2ef5c72e
+
+Mod 15: (DataEngineerPatterns)
+https://chatgpt.com/c/692540b7-f674-8322-8b62-63fea5fcdbd5
+
+Mod 16: (Planning Disasters)
+https://chatgpt.com/c/69254945-9b2c-8321-8d3c-5ddabeff2224
 
