@@ -1,0 +1,1 @@
+console.log([1,5,2].reduce((acc, cur) => Math.max(acc, cur)))
