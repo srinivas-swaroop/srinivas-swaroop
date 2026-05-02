@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="res" placeholder="0">
+
+    <button onclick="add('9')">9</button>
+    <button onclick="add('8')">8</button>
+    <button onclick="add('7')">7</button>
+    <br>
+
+    <button onclick="add('6')">6</button>
+    <button onclick="add('5')">5</button>
+    <button onclick="add('4')">4</button>
+    <br>
+
+    <button onclick="add('3')">3</button>
+    <button onclick="add('2')">2</button>
+    <button onclick="add('1')">1</button>
+    <br>
+
+    <button onclick="add('+')">+</button>
+    <button onclick="add('-')">-</button>
+    <button onclick="add('*')">*</button>
+
+    <button onclick="clear('')">C</button>
+    <button onclick="result('')">=</button>
+    <br>
+
+    <script>
+        function add(value){
+            res.value += value;
+        }
+
+        function result(){
+            res.value = eval(res.value);
+        }
+
+        function clear(){
+            res.value = "";
+        }
+    </script>
+</body>
+</html>
+

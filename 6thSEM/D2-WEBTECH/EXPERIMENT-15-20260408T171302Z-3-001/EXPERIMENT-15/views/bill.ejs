@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Green Star Hotel Bill</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    .bill-box {
+      width: 600px;
+      margin: 30px auto;
+      border: 1px solid #777;
+      background: #fff;
+    }
+
+    .header {
+      text-align: center;
+      padding: 15px 10px;
+      border-bottom: 1px solid #777;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .header h2 {
+      margin: 15px 0 5px;
+      font-size: 20px;
+    }
+
+    .top-section {
+      padding: 15px;
+      border-bottom: 1px solid #777;
+    }
+
+    .date-row {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    select, input[type="number"] {
+      padding: 5px;
+      font-size: 14px;
+      width: 140px;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      background: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: darkgreen;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table td, table th {
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    .summary {
+      border-top: 1px solid #777;
+      padding: 10px 20px;
+      text-align: right;
+      font-size: 18px;
+    }
+
+    .summary div {
+      margin: 5px 0;
+    }
+
+    .add-more {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .inline-form {
+      display: inline-block;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bill-box">
+    <div class="header">
+      <h1>GREEN STAR HOTEL</h1>
+      <h2>Customer Bill</h2>
+    </div>
+
+    <div class="top-section">
+      <div class="date-row">Date: <%= today %></div>
+
+      <div class="form-row">
+        <form action="/" method="get">
+          <% if (billItems.length > 0) { %>
+            <% billItems.forEach(function(b) { %>
+              <input type="hidden" name="item" value="<%= b.name %>">
+              <input type="hidden" name="qty" value="<%= b.qty %>">
+            <% }) %>
+          <% } %>
+
+          <label>Items:</label>
+          <select name="item">
+            <% for(let key in menu) { %>
+              <option value="<%= key %>"><%= key %></option>
+            <% } %>
+          </select>
+
+          <label>No of Items:</label>
+          <input type="number" name="qty" min="1" required>
+
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <table>
+      <tbody>
+        <% if (billItems.length > 0) { %>
+          <% billItems.forEach(function(bill, index) { %>
+            <tr>
+              <td><%= index + 1 %>.</td>
+              <td><%= bill.name %></td>
+              <td><%= bill.qty %></td>
+              <td>Rs. <%= bill.price %> Each</td>
+              <td>Rs. <%= bill.amount %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="5" style="text-align:center;">No items added</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <div class="summary">
+      <div>Total &nbsp;&nbsp; Rs. <%= total.toFixed(2) %></div>
+      <div>GST @5% &nbsp;&nbsp; Rs. <%= gst.toFixed(2) %></div>
+      <div>Bill to be paid &nbsp;&nbsp; Rs. <%= grandTotal.toFixed(2) %></div>
+    </div>
+  </div>
+
+</body>
+</html>

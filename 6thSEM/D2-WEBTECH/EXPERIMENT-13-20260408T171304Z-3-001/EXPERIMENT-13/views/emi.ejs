@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMI Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      width: 760px;
+      margin: auto;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .card {
+      width: 380px;
+      background: #eee;
+      border: 1px solid #999;
+      padding: 0;
+    }
+
+    .title {
+      background: #c4573b;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 20px;
+      margin: 8px;
+      border-radius: 4px;
+    }
+
+    .form-box {
+      padding: 15px 20px;
+    }
+
+    .row {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: inline-block;
+      width: 130px;
+      font-size: 18px;
+    }
+
+    input, select {
+      width: 150px;
+      padding: 6px;
+      font-size: 16px;
+    }
+
+    .small-text {
+      font-size: 16px;
+      margin-left: 8px;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    button, .clear-link {
+      padding: 8px 16px;
+      font-size: 16px;
+      border: 1px solid #999;
+      background: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      border-radius: 4px;
+    }
+
+    .answer-box {
+      background: white;
+      border: 1px solid #aaa;
+      margin-top: 20px;
+      padding: 12px;
+      min-height: 80px;
+    }
+
+    .answer-title {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .answer-result {
+      text-align: center;
+      font-size: 22px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .formula {
+      flex: 1;
+      background: white;
+      border: 1px solid #bbb;
+      padding: 20px;
+      min-height: 380px;
+    }
+
+    .formula h2 {
+      margin-top: 0;
+      font-size: 34px;
+      font-weight: normal;
+    }
+
+    .formula p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 8px 0;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .card, .formula {
+        width: 100%;
+      }
+
+      label {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      input, select {
+        width: 100%;
+      }
+
+      .small-text {
+        margin-left: 0;
+        display: block;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div class="title">EMI Loan Calculator</div>
+
+      <div class="form-box">
+        <form action="/" method="POST">
+          <div class="row">
+            <label>Loan Amount: $</label>
+            <input type="number" step="0.01" name="amount" value="<%= values.amount %>" required>
+          </div>
+
+          <div class="row">
+            <label>Loan Tenure:</label>
+            <input type="number" name="tenure" value="<%= values.tenure %>" required>
+            <span class="small-text">months</span>
+          </div>
+
+          <div class="row">
+            <label>Interest Rate: %</label>
+            <input type="number" step="0.0001" name="rate" value="<%= values.rate %>" required>
+          </div>
+
+          <div class="row">
+            <label>Type:</label>
+            <select name="type">
+              <option value="in Arrears" <%= values.type === 'in Arrears' ? 'selected' : '' %>>in Arrears</option>
+              <option value="in Advance" <%= values.type === 'in Advance' ? 'selected' : '' %>>in Advance</option>
+            </select>
+          </div>
+
+          <div class="btn-row">
+            <a href="/" class="clear-link">Clear</a>
+            <button type="submit">Calculate</button>
+          </div>
+        </form>
+
+        <div class="answer-box">
+          <div class="answer-title">Answer:</div>
+          <% if (result) { %>
+            <div class="answer-result">Monthly Payment: $<%= result %></div>
+          <% } else { %>
+            <div class="answer-result">Monthly Payment: --</div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="formula">
+      <h2>E = P × r × ((1 + r)<sup>n</sup> / ((1 + r)<sup>n</sup> - 1))</h2>
+      <p><b>Where,</b></p>
+      <p><b>E</b> is the EMI</p>
+      <p><b>P</b> is the principal amount</p>
+      <p><b>r</b> is the monthly rate of interest</p>
+      <p><b>n</b> is the number of months</p>
+      <p>
+        EMI in arrears means payment at the end of each month, while EMI in advance means payment at the beginning of each month. EMI in advance is typically lower than EMI in arrears for the same loan inputs. [web:22]
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

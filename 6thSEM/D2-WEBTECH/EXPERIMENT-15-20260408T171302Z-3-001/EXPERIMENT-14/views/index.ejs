@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f6fc;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #222;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      padding: 10px;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    input, select {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .delete-btn {
+      background: #dc3545;
+    }
+
+    .delete-btn:hover {
+      background: #a71d2a;
+    }
+
+    .edit-box {
+      background: #eef5ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TODO Application</h1>
+
+    <h2>Add Todo</h2>
+    <form action="/add" method="POST">
+      <input type="text" name="task" placeholder="Enter your task" required>
+      <button type="submit">Add Todo</button>
+    </form>
+
+    <% if (editTodo) { %>
+      <div class="edit-box">
+        <h2>Update Todo</h2>
+        <form action="/update/<%= editTodo.id %>" method="POST">
+          <input type="text" name="task" value="<%= editTodo.task %>" required>
+          <select name="status">
+            <option value="Pending" <%= editTodo.status === 'Pending' ? 'selected' : '' %>>Pending</option>
+            <option value="Done" <%= editTodo.status === 'Done' ? 'selected' : '' %>>Done</option>
+          </select>
+          <button type="submit">Update Todo</button>
+        </form>
+      </div>
+    <% } %>
+
+    <h2>All Todos</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+
+      <% if (todos.length === 0) { %>
+        <tr>
+          <td colspan="4">No todos available</td>
+        </tr>
+      <% } %>
+
+      <% todos.forEach(todo => { %>
+        <tr>
+          <td><%= todo.id %></td>
+          <td><%= todo.task %></td>
+          <td><%= todo.status %></td>
+          <td>
+            <div class="actions">
+              <form action="/" method="GET" style="display:inline;">
+                <input type="hidden" name="editId" value="<%= todo.id %>">
+                <button type="submit">Edit</button>
+              </form>
+
+              <form action="/delete/<%= todo.id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit" class="delete-btn" onclick="return confirm('Delete this todo?')">Delete</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+</body>
+</html>
